@@ -1,4 +1,4 @@
-package progHomeWork;
+package homework.HW1;
 
 public class BankAccount {
     int accountNumber;
@@ -9,33 +9,41 @@ public class BankAccount {
     Реализовать в классе методы setBalance() который будет задавать баланс ,
      credit() метод должен начислять средства на счет, debit() - снимать средтва со  счета.
       Реализовать условие что если сумма снятия меньше чем остаток
-       на счету - вывести сообщение : “Сумма снятия больше чем остаок на счету!” .
+       на счету - вывести сообщение : “Сумма снятия больше чем остаток на счету!” .
        Создать обьект класса и проверить работу программы.
      */
 
-    public void setBalance(int balance) { //задаем баланс
+    public int setBalance(int balance) { //задаем баланс
         this.balance = balance;
+        return balance;
     }
 
     public int getBalance() { //получаем остаток на счету
         return balance;
             }
 
-    public void credit(int sum) {       //зачисление
-        setBalance(getBalance()+sum);
+    public int credit(int sum) {       //зачисление
+        int dig = setBalance(getBalance()+sum);
         System.out.println("+" + sum );
         System.out.println("После зачисления " + getBalance());
+        return dig;
+
     }
 
-    public void debit(int debitSum) {
+    public int  debit(int debitSum) {
+
+        int result;
         if(debitSum>getBalance()){
             System.out.println("Сумма снятия больше чем остаток на счету!");
+            result = -1;
         }
         else {
-            setBalance(getBalance() - debitSum);
+            result = setBalance(getBalance() - debitSum);
             System.out.println("-" + debitSum);
             System.out.println("После снятия " + getBalance());
+
         }
+        return result;
     }
 
     public void print(String forprint){

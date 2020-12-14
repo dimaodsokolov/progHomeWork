@@ -1,4 +1,4 @@
-package progHomeWork;
+package HW1;
 
 public class RandomArray {
     int max = 9;
