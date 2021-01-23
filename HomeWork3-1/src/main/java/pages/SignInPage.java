@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static Utils.Adds.randomInt;
+import static Utils.Utilities.randomInt;
 
 public class SignInPage {
     private final WebDriver driver;
